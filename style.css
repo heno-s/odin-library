@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* temporary */
+img[src$=".svg"] {
+    width: 30px;
+}
+/* temporary */
+.book {
+    width: 100px;
+    height: 200px;
+    background-color: red;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header,
+footer {
+    color: #fff;
+    background-color: #013b6b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+main {
+    display: flex;
+    flex: 6;
+    background: url(./images/library-background.png) no-repeat center /
+        100% 120%;
+}
+
+.form-container {
+    flex: 3;
+}
+
+.books {
+    flex: 5;
+}
