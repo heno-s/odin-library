@@ -30,12 +30,11 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
 }
 
 main {
     display: flex;
-    flex: 6;
+    flex: 1;
     background: url(./images/library-background.png) no-repeat center /
         100% 120%;
 }
