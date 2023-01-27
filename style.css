@@ -69,16 +69,17 @@ footer {
 main {
     display: flex;
     flex: 1;
-    padding: 40px;
+    height: 1px; /* this is needed, so books container will overflow */
+    padding: 20px;
     background: url(./images/library-background.png) no-repeat center /
         100% 120%;
 }
 
 .form-container {
+    width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 3;
 }
 
 .reveal-form {
@@ -152,9 +153,11 @@ input[type="number"] {
 }
 
 .books {
-    flex: 7;
+    flex: 1;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
+    overflow-y: auto;
 }
 
 .book {
