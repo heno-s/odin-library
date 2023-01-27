@@ -79,12 +79,75 @@ footer {
 main {
     display: flex;
     flex: 1;
+    padding: 40px;
     background: url(./images/library-background.png) no-repeat center /
         100% 120%;
 }
 
 .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 3;
+}
+
+.reveal-form {
+    cursor: pointer;
+    margin-bottom: 24px;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: #4bee9c;
+}
+
+.reveal-form:hover {
+    background-color: #a1face;
+}
+
+.book-form {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 200px;
+}
+
+.book-form input:not([type="checkbox"]) {
+    border: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.book-form > :last-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-form input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: #65e9a7;
+}
+
+.book-form input[type="checkbox"]:checked + label {
+    color: #65e9a7;
+}
+
+.book-form label[for="did_read"] {
+    cursor: pointer;
+}
+
+.submit {
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #119b56;
+    color: #fff;
+}
+
+.submit:hover {
+    background-color: #0e7943;
 }
 
 .books {
