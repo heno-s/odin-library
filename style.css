@@ -60,10 +60,11 @@ body {
     outline: none;
 }
 
-.searchbox img {
+.triangle {
     cursor: pointer;
     width: 12px;
     transform: rotateZ(180deg);
+    color: #000;
 }
 
 header,
@@ -134,6 +135,7 @@ main {
 }
 
 .book-form label[for="did_read"] {
+    color: #fff;
     cursor: pointer;
 }
 
@@ -162,4 +164,23 @@ input[type="number"] {
 
 .books {
     flex: 5;
+}
+
+footer {
+    padding: 5px 0;
+}
+
+.contact-links .mdi {
+    display: inline-block;
+    font-size: 40px;
+    cursor: pointer;
+    color: #73ff00;
+}
+
+.contact-links a:not(:first-child) {
+    margin-left: 5px;
+}
+
+.contact-links .mdi:hover {
+    color: #088efd;
 }
