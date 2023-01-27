@@ -1,3 +1,5 @@
+@import url(./fonts.css);
+
 *,
 *::before,
 *::after {
@@ -23,9 +25,51 @@ body {
     height: 100vh;
 }
 
+.app-title {
+    font-family: Tangerine;
+    font-size: 3rem;
+    margin-bottom: 0.2em;
+}
+
+.dropdown {
+    display: none;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: -7ch; /* to calibrate with searchbox (-7ch = search:) */
+}
+
+.searchbox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.searchbox input {
+    border: none;
+    background-color: transparent;
+}
+
+.searchbox input:focus {
+    outline: none;
+}
+
+.searchbox img {
+    cursor: pointer;
+    width: 12px;
+    transform: rotateZ(180deg);
+}
+
 header,
 footer {
     color: #fff;
+    padding: 15px;
     background-color: #013b6b;
     display: flex;
     flex-direction: column;
