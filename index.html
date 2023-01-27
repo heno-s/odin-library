@@ -34,7 +34,7 @@
         </header>
         <main>
             <div class="form-container">
-                <button class="reveal-form">Add book</button>
+                <button class="reveal-form">NEW BOOK</button>
                 <form class="book-form">
                     <input type="text" id="title" name="title" />
                     <input type="text" id="author" name="author" />
@@ -52,108 +52,27 @@
             </div>
 
             <div class="books">
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
+                <template id="book_template">
+                    <div class="book">
+                        <div class="book-header">
+                            <div>
+                                <span class="read-mark"></span> READ
+                            </div>
+                            <div class="delete">X</div>
                         </div>
-                        <div class="delete">X</div>
-                    </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
+                        <div class="book-body">
+                            <div class="book-title">
+                                Harry Potter fotter
+                            </div>
+                            <div class="book-author">
+                                J. K. Rowling
+                            </div>
                         </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
+                        <div class="book-footer">
+                            <div><span id="pages">365</span></div>
                         </div>
-                        <div class="delete">X</div>
                     </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
-                        </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
-                        </div>
-                        <div class="delete">X</div>
-                    </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
-                        </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
-                        </div>
-                        <div class="delete">X</div>
-                    </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
-                        </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
-                        </div>
-                        <div class="delete">X</div>
-                    </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
-                        </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
-                <div class="book">
-                    <div class="book-header">
-                        <div>
-                            <span class="read-mark"></span> READ
-                        </div>
-                        <div class="delete">X</div>
-                    </div>
-                    <div class="book-body">
-                        <div class="book-title">
-                            Harry Potter fotter
-                        </div>
-                        <div class="book-author">J. K. Rowling</div>
-                    </div>
-                    <div class="book-footer">
-                        <div><span>365</span></div>
-                    </div>
-                </div>
+                </template>
             </div>
         </main>
         <footer>
@@ -175,5 +94,7 @@
                 <div></div>
             </div>
         </footer>
+
+        <script src="main.js"></script>
     </body>
 </html>
