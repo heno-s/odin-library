@@ -8,6 +8,10 @@
             content="width=device-width, initial-scale=1.0"
         />
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css"
+        />
         <title>Document</title>
     </head>
     <body>
@@ -16,10 +20,9 @@
             <div class="search">
                 <span>search:</span>
                 <div class="searchbox">
-                    <input type="text" /><img
-                        src="./images/triangle.svg"
-                        alt="triangle"
-                    />
+                    <input type="text" /><span
+                        class="mdi mdi-triangle triangle"
+                    ></span>
                 </div>
                 <ul class="dropdown">
                     <li>title</li>
@@ -55,9 +58,20 @@
         <footer>
             <span>contact:</span>
             <div class="contact-links">
-                <img src="./images/github.svg" alt="github" />
-                <img src="./images/instagram.svg" alt="instagram" />
-                <img src="./images/facebook.svg" alt="facebook" />
+                <a target="_blank" href="https://github.com/heno-s"
+                    ><span class="mdi mdi-github"></span
+                ></a>
+                <a
+                    target="_blank"
+                    href="https://instagram.com/henosury"
+                    ><span class="mdi mdi-instagram"></span
+                ></a>
+                <a
+                    target="_blank"
+                    href="https://facebook.com/henoplastoveretazky.sury"
+                    ><span class="mdi mdi-facebook"></span
+                ></a>
+                <div></div>
             </div>
         </footer>
     </body>
