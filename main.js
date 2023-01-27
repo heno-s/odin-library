@@ -29,6 +29,7 @@ function loadBooks() {
         bookHtml.querySelector(".book-title").textContent = title;
         bookHtml.querySelector(".book-author").textContent = author;
         bookHtml.querySelector("#pages").textContent = pages;
+        if (didRead) bookHtml.classList.add("read");
 
         const booksContainer = document.querySelector(".books");
         booksContainer.appendChild(bookHtml);

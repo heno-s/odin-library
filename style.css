@@ -181,19 +181,19 @@ input[type="number"] {
     cursor: pointer;
 }
 
-.read-mark::before {
+.read .read-mark::before {
     font-size: 1.2rem;
     content: "✔";
     color: green;
     font-weight: bold;
 }
 
-/* .read-mark::after {
+.read-mark::before {
     font-size: 1.2rem;
     content: "x";
     color: red;
     font-weight: bold;
-} */
+}
 
 .delete {
     cursor: pointer;
