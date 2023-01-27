@@ -9,3 +9,8 @@
     src: url(./fonts/Tangerine-Bold.ttf);
     font-weight: bold;
 }
+
+@font-face {
+    font-family: vibes;
+    src: url(./fonts/GreatVibes-Regular.ttf);
+}

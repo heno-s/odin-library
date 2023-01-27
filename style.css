@@ -8,17 +8,6 @@
     box-sizing: border-box;
 }
 
-/* temporary */
-img[src$=".svg"] {
-    width: 30px;
-}
-/* temporary */
-.book {
-    width: 100px;
-    height: 200px;
-    background-color: red;
-}
-
 body {
     display: flex;
     flex-direction: column;
@@ -163,7 +152,69 @@ input[type="number"] {
 }
 
 .books {
-    flex: 5;
+    flex: 7;
+    display: flex;
+    gap: 10px;
+}
+
+.book {
+    width: 200px;
+    height: 300px;
+    padding: 6px 10px;
+    color: #fff;
+    background: url(./images/book-cover.jpeg) no-repeat center / cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.book-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-header :first-child {
+    cursor: pointer;
+}
+
+.read-mark::before {
+    font-size: 1.2rem;
+    content: "✔";
+    color: green;
+    font-weight: bold;
+}
+
+/* .read-mark::after {
+    font-size: 1.2rem;
+    content: "x";
+    color: red;
+    font-weight: bold;
+} */
+
+.delete {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.book-body {
+    text-align: center;
+}
+
+.book-title {
+    font-size: 1.6rem;
+    font-family: vibes;
+    margin-bottom: 0.7em;
+}
+
+.book-author {
+    font-size: 1rem;
+    font-family: vibes;
+}
+
+.book-footer {
+    font-size: 0.8rem;
+    align-self: flex-end;
 }
 
 footer {
