@@ -25,7 +25,8 @@ function loadBooks() {
     function displayBook(book) {
         const bookTemplate = document.querySelector("#book_template");
         const { title, author, pages, didRead } = book;
-        const bookHtml = bookTemplate.content.firstElementChild;
+        const bookHtml =
+            bookTemplate.content.firstElementChild.cloneNode(true);
         bookHtml.querySelector(".book-title").textContent = title;
         bookHtml.querySelector(".book-author").textContent = author;
         bookHtml.querySelector("#pages").textContent = pages;
