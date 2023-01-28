@@ -36,12 +36,34 @@
             <div class="form-container">
                 <button class="reveal-form">NEW BOOK</button>
                 <form class="book-form">
-                    <input type="text" id="title" name="title" />
-                    <input type="text" id="author" name="author" />
-                    <input type="number" id="pages" name="pages" />
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="title"
+                        required
+                    />
+                    <input
+                        type="text"
+                        id="author"
+                        name="author"
+                        placeholder="author"
+                        required
+                    />
+                    <input
+                        type="number"
+                        id="pages"
+                        name="pages"
+                        placeholder="pages"
+                        required
+                    />
                     <div>
                         <div>
-                            <input type="checkbox" id="did_read" />
+                            <input
+                                type="checkbox"
+                                id="did_read"
+                                name="didRead"
+                            />
                             <label for="did_read">READ</label>
                         </div>
                         <button class="submit" id="submit">
@@ -51,29 +73,26 @@
                 </form>
             </div>
 
-            <div class="books">
-                <template id="book_template">
-                    <div class="book">
-                        <div class="book-header">
-                            <div>
-                                <span class="read-mark"></span> READ
-                            </div>
-                            <div class="delete">X</div>
+            <template id="book_template">
+                <div class="book">
+                    <div class="book-header">
+                        <div>
+                            <span class="read-mark"></span> READ
                         </div>
-                        <div class="book-body">
-                            <div class="book-title">
-                                Harry Potter fotter
-                            </div>
-                            <div class="book-author">
-                                J. K. Rowling
-                            </div>
-                        </div>
-                        <div class="book-footer">
-                            <div><span id="pages">365</span></div>
-                        </div>
+                        <div class="delete">X</div>
                     </div>
-                </template>
-            </div>
+                    <div class="book-body">
+                        <div class="book-title">
+                            Harry Potter fotter
+                        </div>
+                        <div class="book-author">J. K. Rowling</div>
+                    </div>
+                    <div class="book-footer">
+                        <div><span id="pages">365</span></div>
+                    </div>
+                </div>
+            </template>
+            <div class="books"></div>
         </main>
         <footer>
             <span>contact:</span>
