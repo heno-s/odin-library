@@ -177,7 +177,7 @@ input[type="number"] {
     justify-content: space-between;
 }
 
-.book-header :first-child {
+.read-status {
     cursor: pointer;
 }
 

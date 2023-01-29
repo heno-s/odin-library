@@ -1,5 +1,24 @@
 const myLibrary = [];
 const form = document.forms[0];
+const booksContainer = document.querySelector(".books");
+
+booksContainer.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t.classList.contains("delete")) {
+        const book = t.closest(".book");
+        removeBookFromLibrary(book.dataset.index);
+        book.remove();
+    } else if (t.classList.contains("read-status")) {
+        const book = t.closest(".book");
+        const bookInLibrary = myLibrary[book.dataset.index];
+        bookInLibrary.didRead = !bookInLibrary.didRead;
+        if (bookInLibrary.didRead) {
+            book.classList.add("read");
+        } else {
+            book.classList.remove("read");
+        }
+    }
+});
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -30,6 +49,10 @@ function addBookToLibrary(title, author, pages, didRead) {
     myLibrary.push(book);
 }
 
+function removeBookFromLibrary(index) {
+    myLibrary.splice(index, 1);
+}
+
 function loadBooks() {
     clearBooks();
     myLibrary.forEach(displayBook);
@@ -45,15 +68,15 @@ function loadBooks() {
         bookHtml.querySelector("#pages").textContent = pages;
         if (didRead) bookHtml.classList.add("read");
 
-        const booksContainer = document.querySelector(".books");
         booksContainer.appendChild(bookHtml);
     }
     function clearBooks() {
-        const booksContainer = document.querySelector(".books");
         booksContainer.innerHTML = "";
     }
 }
 
-addBookToLibrary("Harry Potter", "J. K. Rowling", "35", true);
+addBookToLibrary("Harry Potter", "J. K. Rowling", "1", true);
+addBookToLibrary("Harry Potter", "J. K. Rowling", "2", true);
+addBookToLibrary("Harry Potter", "J. K. Rowling", "3", true);
 
 loadBooks();
