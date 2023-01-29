@@ -7,7 +7,7 @@ booksContainer.addEventListener("click", (e) => {
     if (t.classList.contains("delete")) {
         const book = t.closest(".book");
         removeBookFromLibrary(book.dataset.index);
-        book.remove();
+        loadBooks();
     } else if (t.classList.contains("read-status")) {
         const book = t.closest(".book");
         const bookInLibrary = myLibrary[book.dataset.index];
