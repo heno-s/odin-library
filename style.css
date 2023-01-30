@@ -21,10 +21,6 @@ body {
     margin-bottom: 0.2em;
 }
 
-.dropdown {
-    display: none;
-}
-
 .search {
     display: flex;
     gap: 10px;
@@ -33,28 +29,23 @@ body {
 }
 
 .searchbox {
+    width: 200px;
     display: flex;
     gap: 10px;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 7px 10px;
 }
 
 .searchbox input {
+    font-size: 0.9rem;
     border: none;
     background-color: transparent;
 }
 
 .searchbox input:focus {
     outline: none;
-}
-
-.triangle {
-    cursor: pointer;
-    width: 12px;
-    transform: rotateZ(180deg);
-    color: #000;
 }
 
 header,
@@ -105,7 +96,7 @@ main {
 
 .book-form input:not([type="checkbox"]) {
     border: none;
-    padding: 3px 5px;
+    padding: 5px 8px;
     border-radius: 5px;
     width: 100%;
 }
