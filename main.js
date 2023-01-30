@@ -1,36 +1,12 @@
 const myLibrary = [];
 const form = document.forms[0];
 const booksContainer = document.querySelector(".books");
+const search = document.querySelector("#search");
 
-booksContainer.addEventListener("click", (e) => {
-    const t = e.target;
-    if (t.classList.contains("delete")) {
-        const book = t.closest(".book");
-        removeBookFromLibrary(book.dataset.index);
-        loadBooks();
-    } else if (t.classList.contains("read-status")) {
-        const book = t.closest(".book");
-        const bookInLibrary = myLibrary[book.dataset.index];
-        bookInLibrary.didRead = !bookInLibrary.didRead;
-        if (bookInLibrary.didRead) {
-            book.classList.add("read");
-        } else {
-            book.classList.remove("read");
-        }
-    }
-});
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const title = e.target.title.value;
-    const author = e.target.author.value;
-    const pages = e.target.pages.value;
-    const didRead = e.target.didRead.checked;
-
-    addBookToLibrary(title, author, pages, didRead);
-    loadBooks();
-    e.target.reset();
-});
+search.addEventListener("input", filterBooks);
+form.addEventListener("submit", addBook);
+booksContainer.addEventListener("click", changeReadStatus);
+booksContainer.addEventListener("click", deleteBook);
 
 function Book(title, author, pages, didRead) {
     this.title = title;
@@ -73,6 +49,70 @@ function loadBooks() {
     function clearBooks() {
         booksContainer.innerHTML = "";
     }
+}
+
+/* Event listeners */
+
+function filterBooks(evt) {
+    const search = evt.target;
+    if (search.value === "") {
+        [...booksContainer.children].forEach((book) => {
+            book.style.display = "flex";
+        });
+        return null;
+    }
+    const toRemove = myLibrary
+        .filter(
+            (book) =>
+                !book.title
+                    .toLowerCase()
+                    .startsWith(search.value.toLowerCase())
+        )
+        .map((book, index) => index);
+
+    const books = [...booksContainer.children];
+    books.forEach((book) => {
+        if (toRemove.includes(+book.dataset.index)) {
+            book.style.display = "none";
+        } else {
+            book.style.display = "flex";
+        }
+    });
+}
+
+function deleteBook(evt) {
+    const t = evt.target;
+    if (t.classList.contains("delete")) {
+        const book = t.closest(".book");
+        removeBookFromLibrary(+book.dataset.index);
+        loadBooks();
+    }
+}
+
+function changeReadStatus(evt) {
+    const t = evt.target;
+    if (t.classList.contains("read-status")) {
+        const book = t.closest(".book");
+        const bookInLibrary = myLibrary[+book.dataset.index];
+        bookInLibrary.didRead = !bookInLibrary.didRead;
+        if (bookInLibrary.didRead) {
+            book.classList.add("read");
+        } else {
+            book.classList.remove("read");
+        }
+    }
+}
+
+function addBook(evt) {
+    evt.preventDefault();
+    const title = evt.target.title.value;
+    const author = evt.target.author.value;
+    const pages = evt.target.pages.value;
+    const didRead = evt.target.didRead.checked;
+
+    addBookToLibrary(title, author, pages, didRead);
+    loadBooks();
+    evt.target.reset();
 }
 
 addBookToLibrary("Harry Potter", "J. K. Rowling", "1", true);
