@@ -8,16 +8,19 @@ form.addEventListener("submit", addBook);
 booksContainer.addEventListener("click", changeReadStatus);
 booksContainer.addEventListener("click", deleteBook);
 
-function Book(title, author, pages, didRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.didRead = didRead;
-    this.info = function () {
+class Book {
+    constructor(title, author, pages, didRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.didRead = didRead;
+    }
+
+    info() {
         return `${this.title} by ${this.author}, ${
             this.pages
         } pages, ${this.didRead ? "read" : "not read yet"}`;
-    };
+    }
 }
 
 function addBookToLibrary(title, author, pages, didRead) {
