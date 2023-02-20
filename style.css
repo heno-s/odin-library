@@ -101,6 +101,16 @@ main {
     width: 100%;
 }
 
+.error {
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: rgb(223, 58, 58);
+    padding: 5px;
+    color: #fff;
+}
+
 .book-form > :last-child {
     display: flex;
     justify-content: space-between;

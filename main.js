@@ -108,14 +108,65 @@ function changeReadStatus(evt) {
 
 function addBook(evt) {
     evt.preventDefault();
-    const title = evt.target.title.value;
-    const author = evt.target.author.value;
-    const pages = evt.target.pages.value;
-    const didRead = evt.target.didRead.checked;
+    const form = evt.target;
+    const isValidForm = form.checkValidity();
 
-    addBookToLibrary(title, author, pages, didRead);
+    const title = form.title;
+    const author = form.author;
+    const pages = form.pages;
+    const didRead = form.didRead;
+
+    if (!isValidForm) {
+        if (title.validity.valueMissing) {
+            const spanError = title.nextElementSibling;
+            spanError.classList.add("error");
+            spanError.textContent = `Title value cannot be empty`;
+        } else if (title.validity.valid) {
+            const spanError = title.nextElementSibling;
+            spanError.classList.remove("error");
+            spanError.textContent = ``;
+        }
+        if (author.validity.valueMissing) {
+            const spanError = author.nextElementSibling;
+            spanError.classList.add("error");
+            spanError.textContent = `You need to provide an author`;
+        } else if (author.validity.valid) {
+            const spanError = author.nextElementSibling;
+            spanError.classList.remove("error");
+            spanError.textContent = ``;
+        }
+        if (pages.validity.valueMissing) {
+            const spanError = pages.nextElementSibling;
+            spanError.classList.add("error");
+            spanError.textContent = `Fill out number of pages`;
+        } else if (pages.validity.patternMismatch) {
+            const spanError = pages.nextElementSibling;
+            spanError.classList.add("error");
+            spanError.textContent = `It needs to be number`;
+        } else if (pages.validity.valid) {
+            const spanError = pages.nextElementSibling;
+            spanError.classList.remove("error");
+            spanError.textContent = ``;
+        }
+        return;
+    }
+
+    addBookToLibrary(
+        title.value,
+        author.value,
+        pages.value,
+        didRead.checked
+    );
     loadBooks();
-    evt.target.reset();
+    form.reset();
+
+    const errors = form.querySelectorAll(
+        ".form-control input + span"
+    );
+    errors.forEach((error) => {
+        error.classList.remove("error");
+        error.textContent = "";
+    });
 }
 
 addBookToLibrary("Harry Potter", "J. K. Rowling", "1", true);

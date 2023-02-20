@@ -31,28 +31,37 @@
         <main>
             <div class="form-container">
                 <button class="reveal-form">NEW BOOK</button>
-                <form class="book-form">
-                    <input
-                        type="text"
-                        id="title"
-                        name="title"
-                        placeholder="title"
-                        required
-                    />
-                    <input
-                        type="text"
-                        id="author"
-                        name="author"
-                        placeholder="author"
-                        required
-                    />
-                    <input
-                        type="number"
-                        id="pages"
-                        name="pages"
-                        placeholder="pages"
-                        required
-                    />
+                <form class="book-form" novalidate>
+                    <div class="form-control">
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="title"
+                            required
+                        />
+                        <span></span>
+                    </div>
+                    <div class="form-control">
+                        <input
+                            type="text"
+                            id="author"
+                            name="author"
+                            placeholder="author"
+                            required
+                        />
+                        <span></span>
+                    </div>
+                    <div class="form-control">
+                        <input
+                            type="number"
+                            id="pages"
+                            name="pages"
+                            placeholder="pages"
+                            required
+                        />
+                        <span></span>
+                    </div>
                     <div>
                         <div>
                             <input
